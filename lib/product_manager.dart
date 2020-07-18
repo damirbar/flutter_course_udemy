@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './products.dart';
+import './product_control.dart';
 
 class ProductManager extends StatefulWidget {
 
@@ -19,7 +20,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProductManagerState extends State<ProductManager> {
-  List<String> _products = []; 
+  final List<String> _products = []; 
 
   @override
   void initState() {
@@ -41,24 +42,21 @@ class _ProductManagerState extends State<ProductManager> {
     super.didUpdateWidget(oldWidget);
   }
 
+  void _addProduct(String product) {
+    // If we just change the state w/o telling flutter,
+    //   it will not refresh the state.
+    setState(() {
+      _products.add('Advanced Food Tester');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     print('[ProductManager State] build()');
     return Column(children:
       [Container(
         margin: EdgeInsets.all(10.0),
-        child: RaisedButton(
-          // Using the theme color for the button.
-          color: Theme.of(context).primaryColor,
-          onPressed: () {
-            // If we just change the state w/o telling flutter,
-            //   it will not refresh the state.
-            setState(() {
-              _products.add('Advanced Food Tester');
-            });
-          },
-          child: Text('Add Product')
-        ),
+        child: ProductControl(_addProduct)
       ),
       Products(_products),
       ]

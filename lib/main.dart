@@ -1,25 +1,28 @@
-// 1) Create a new Flutter App and output an AppBar and some text below it.
-// 2) Add a button which changes the text (to any other text).
-// 3) Split the app into three widgets: App, TextControl and Text
-
 import 'package:flutter/material.dart';
 
-import './text_control.dart';
+import './product_manager.dart';
 
-void main() => runApp(TextApp());
+void main() => runApp(MyApp());
 
-class TextApp extends StatelessWidget {
-  
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        // The primary swatch is a set of colors where we define one
+        //   color and the other colors will be inferred automatically.
+        primarySwatch: Colors.deepOrange,
+        accentColor: Colors.deepPurple,
+        brightness: Brightness.light
+      ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Text App'),
+          title: Text('EasyList'),
         ),
-        body: TextControl()
+        //                   Positional argument to the constructor
+        body: ProductManager(startingProduct: 'Food Tester')
       )
     );
   }
-
 }
