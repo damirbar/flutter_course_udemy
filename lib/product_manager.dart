@@ -48,6 +48,8 @@ class _ProductManagerState extends State<ProductManager> {
       [Container(
         margin: EdgeInsets.all(10.0),
         child: RaisedButton(
+          // Using the theme color for the button
+          color: Theme.of(context).primaryColor,
           onPressed: () {
             // If we just change the state w/o telling flutter,
             //   it will not refresh the state.
