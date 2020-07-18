@@ -4,19 +4,12 @@
 
 import 'package:flutter/material.dart';
 
+import './text_control.dart';
+
 void main() => runApp(TextApp());
 
-class TextApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _TextAppState();
-  }
-}
-
-class _TextAppState extends State<TextApp> {
-
-  String _mainText = 'This is the first assignment';
-
+class TextApp extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,19 +17,7 @@ class _TextAppState extends State<TextApp> {
         appBar: AppBar(
           title: Text('Text App'),
         ),
-        body: Column(
-          children: [
-            RaisedButton(
-              onPressed: () {
-                setState(() {
-                  _mainText = 'This changed!';
-                });
-              },
-              child: Text('Change Text'),
-            ),
-            Text(_mainText)
-            ],
-        )
+        body: TextControl()
       )
     );
   }
