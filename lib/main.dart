@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('EasyList'),
         ),
-        body: ProductManager('Food Tester')
+        //                   Positional argument to the constructor
+        body: ProductManager(startingProduct: 'Food Tester')
       )
     );
   }

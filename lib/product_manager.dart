@@ -6,7 +6,7 @@ class ProductManager extends StatefulWidget {
 
   final String startingProduct;
 
-  ProductManager(this.startingProduct) {
+  ProductManager({this.startingProduct = 'Sweets Tester'}) {
     print('[ProductManager Widget] Constructor');
   }
 
@@ -48,7 +48,7 @@ class _ProductManagerState extends State<ProductManager> {
       [Container(
         margin: EdgeInsets.all(10.0),
         child: RaisedButton(
-          // Using the theme color for the button
+          // Using the theme color for the button.
           color: Theme.of(context).primaryColor,
           onPressed: () {
             // If we just change the state w/o telling flutter,

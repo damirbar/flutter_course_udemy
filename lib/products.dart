@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class Products extends StatelessWidget {
 
   final List<String> products;
-  
-  Products(this.products) {
+  // For named arguments we use curly braces.
+  // For positional ones only optional ones are wrapped but then
+  //   with squared brackets
+  Products([this.products = const []]) {
     print('[Products Widget] Constructor');
   }
 
