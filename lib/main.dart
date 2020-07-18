@@ -6,7 +6,17 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(TextApp());
 
-class TextApp extends StatelessWidget {
+class TextApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _TextAppState();
+  }
+}
+
+class _TextAppState extends State<TextApp> {
+
+  String _mainText = 'This is the first assignment';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,10 +27,14 @@ class TextApp extends StatelessWidget {
         body: Column(
           children: [
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  _mainText = 'This changed!';
+                });
+              },
               child: Text('Change Text'),
             ),
-            Text('This is the first assignment')
+            Text(_mainText)
             ],
         )
       )
