@@ -14,7 +14,7 @@ class Products extends StatelessWidget {
   Widget build(BuildContext context) {
     print('[Products Widget] build()');
     return Column(
-      children:
+      children: 
         products.map((elem) => Card(
           child: Column(
             children: <Widget>[
